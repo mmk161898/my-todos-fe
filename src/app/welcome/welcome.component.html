@@ -1,0 +1,19 @@
+<div *ngIf="errorMessage" class="container error"><H2> {{ errorMessage }} </H2></div>
+
+<div *ngIf="!errorMessage">
+  <h1>Welcome !</h1>
+  <div class="container">
+    Welcome {{name}}. You can manage your todos <a routerLink="/todos">here</a>.
+  </div>
+
+  <div class="container">
+    Click here to get the response from the backend service.
+    <button (click)="getDataFromServiceWithPathVariable()" class="btn btn-success">Get response from Backend</button>
+  </div>
+
+
+  <div class="container" *ngIf='welcomeMessage'>
+    <H2>Your Customized Message from Backend </H2>
+    {{ welcomeMessage }}
+  </div>
+</div>
